@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>谷口星河さん アサイン提案資料</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:wght@400;700&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f3ee;
+    --surface: #ffffff;
+    --surface2: #f0ede6;
+    --ink: #1a1714;
+    --ink2: #4a4540;
+    --ink3: #7a736a;
+    --accent: #2d5a3d;
+    --accent2: #4a8c60;
+    --accent-light: #e8f0eb;
+    --gold: #b5893a;
+    --gold-light: #f5ecd6;
+    --border: #ddd8ce;
+    --radius: 4px;
+    --shadow: 0 2px 16px rgba(26,23,20,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.75; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(245,243,238,0.95); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px; display: flex; align-items: center; gap: 8px;
+    height: 48px; overflow-x: auto; scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav a {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
+    color: var(--ink3); text-decoration: none; white-space: nowrap;
+    padding: 4px 10px; border-radius: 20px; transition: all 0.2s;
+  }
+  nav a:hover { background: var(--accent); color: #fff; }
+
+  section {
+    min-height: 100vh; padding: 96px 24px 72px;
+    display: flex; flex-direction: column; justify-content: center;
+    max-width: 900px; margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+  section:last-child { border-bottom: none; }
+
+  /* COVER */
+  #cover {
+    min-height: 100vh; background: var(--accent); color: #fff;
+    max-width: 100%; padding: 0; display: grid; place-items: center;
+    position: relative; overflow: hidden;
+  }
+  #cover::before {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 41px);
+  }
+  .cover-inner { text-align: center; padding: 48px 24px; position: relative; }
+  .cover-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.2em; opacity: 0.6; text-transform: uppercase; margin-bottom: 32px; }
+  .cover-name { font-family: 'Playfair Display', serif; font-size: clamp(48px, 10vw, 88px); line-height: 1.1; margin-bottom: 8px; }
+  .cover-name-ja { font-family: 'Noto Serif JP', serif; font-size: clamp(16px, 3vw, 22px); opacity: 0.7; letter-spacing: 0.15em; margin-bottom: 40px; }
+  .cover-role { font-family: 'Noto Serif JP', serif; font-size: clamp(13px, 2vw, 18px); line-height: 1.8; opacity: 0.9; margin-bottom: 48px; }
+  .cover-role strong { opacity: 1; font-weight: 700; }
+  .cover-notice { font-size: 12px; opacity: 0.6; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; padding: 8px 16px; display: inline-block; }
+  .cover-pills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 40px; }
+  .cover-pill { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 6px 18px; font-size: 12px; letter-spacing: 0.05em; }
+  .summary-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 40px; }
+  @media(max-width:600px){ .summary-row { grid-template-columns: 1fr; } }
+  .summary-pill { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+  .summary-pill .sp-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 6px; }
+  .summary-pill h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .summary-pill p { font-size: 12px; color: var(--ink3); }
+
+  /* COMMON */
+  .page-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.25em; color: var(--ink3); text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .page-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .sec-title { font-family: 'Noto Serif JP', serif; font-size: clamp(22px, 4vw, 32px); font-weight: 700; line-height: 1.4; margin-bottom: 8px; }
+  .sec-sub { color: var(--ink3); font-size: 14px; margin-bottom: 40px; line-height: 1.6; }
+  .divider { height: 1px; background: var(--border); margin: 32px 0; }
+
+  /* PROFILE */
+  .profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media(max-width:600px){ .profile-grid { grid-template-columns: 1fr; } }
+  .profile-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); }
+  .profile-card h4 { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; color: var(--ink3); text-transform: uppercase; margin-bottom: 6px; }
+  .profile-card p { font-size: 14px; line-height: 1.6; }
+  .profile-card .val { font-weight: 600; color: var(--ink); }
+  .org-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-top: 24px; }
+  .org-block h4 { font-family: 'Noto Serif JP', serif; font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--accent); }
+  .org-block ul { list-style: none; padding: 0; }
+  .org-block li { font-size: 13px; padding: 4px 0; border-bottom: 1px dashed var(--border); color: var(--ink2); }
+  .org-block li:last-child { border-bottom: none; }
+  .org-block li strong { color: var(--accent); }
+
+  /* SKILLS TABLE */
+  .skill-table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); margin-bottom: 24px; }
+  .skill-table th { background: var(--accent); color: #fff; font-size: 12px; font-weight: 600; padding: 10px 14px; text-align: left; }
+  .skill-table td { padding: 10px 14px; font-size: 13px; border-bottom: 1px solid var(--border); color: var(--ink2); vertical-align: top; }
+  .skill-table tr:last-child td { border-bottom: none; }
+  .skill-level { display: flex; gap: 3px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+  .dot.on { background: var(--accent); }
+
+  /* STRENGTHS */
+  .strength-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .strength-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; position: relative; overflow: hidden; }
+  .strength-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); }
+  .strength-num { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 8px; }
+  .strength-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+  .strength-card p { font-size: 13px; color: var(--ink2); line-height: 1.6; }
+  .strength-card .person-comment { font-size: 11px; color: var(--gold); font-style: italic; margin-top: 8px; padding: 6px 8px; background: var(--gold-light); border-radius: 2px; }
+
+  /* WCM */
+  .wcm-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+  @media(max-width:600px){ .wcm-grid { grid-template-columns: 1fr; } }
+  .wcm-card { background: var(--accent); color: #fff; border-radius: var(--radius); padding: 28px 20px; text-align: center; }
+  .wcm-card .wcm-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.3em; opacity: 0.7; margin-bottom: 6px; }
+  .wcm-card h4 { font-family: 'Noto Serif JP', serif; font-size: 13px; font-weight: 600; margin-bottom: 10px; opacity: 0.85; }
+  .wcm-card p { font-size: 13px; line-height: 1.7; opacity: 0.9; }
+
+  /* EVALUATION */
+  .eval-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .eval-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+  .eval-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 8px; }
+  .eval-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+  .eval-card ul { list-style: none; padding: 0; }
+  .eval-card li { font-size: 12px; color: var(--ink2); padding: 3px 0; border-bottom: 1px dashed var(--border); }
+  .eval-card li:last-child { border-bottom: none; }
+  .eval-card .quote { font-size: 11px; color: var(--accent); font-style: italic; margin-top: 10px; padding: 8px 10px; background: var(--accent-light); border-left: 2px solid var(--accent); border-radius: 2px; }
+  .self-score { display: flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 11px; color: var(--ink3); }
+
+  /* APTITUDE */
+  .apt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .apt-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+  .apt-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--ink3); letter-spacing: 0.15em; margin-bottom: 6px; }
+  .apt-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+  .apt-card .scene { font-size: 11px; color: var(--accent); font-weight: 600; margin-bottom: 6px; }
+  .apt-card p { font-size: 12px; color: var(--ink2); line-height: 1.6; }
+  .apt-card .self { font-size: 11px; color: var(--gold); font-style: italic; margin-top: 8px; padding: 6px 8px; background: var(--gold-light); border-radius: 2px; }
+
+  /* HOPES */
+  .hopes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 14px; }
+  .hope-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; gap: 14px; }
+  .hope-num { font-family: 'DM Mono', monospace; font-size: 22px; color: var(--accent); font-weight: 300; line-height: 1; min-width: 28px; }
+  .hope-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .hope-card p { font-size: 12px; color: var(--ink2); line-height: 1.6; }
+
+  /* VALUE ICONS */
+  .value-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 12px; margin-top: 8px; }
+  .value-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 14px; text-align: center; }
+  .value-card .vi { font-size: 26px; margin-bottom: 6px; }
+  .value-card h4 { font-size: 11px; font-weight: 700; color: var(--ink3); margin-bottom: 4px; }
+  .value-card p { font-size: 12px; color: var(--ink); }
+
+  /* POSITION */
+  .position-hero { background: var(--accent); color: #fff; border-radius: var(--radius); padding: 40px; text-align: center; margin-bottom: 24px; }
+  .position-hero .pos-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; opacity: 0.6; margin-bottom: 12px; }
+  .position-hero h3 { font-family: 'Noto Serif JP', serif; font-size: clamp(16px, 2.5vw, 24px); line-height: 1.6; font-weight: 700; margin-bottom: 10px; }
+  .position-hero .future { font-size: 13px; opacity: 0.75; }
+  .tasks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+  .task-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; gap: 14px; align-items: flex-start; }
+  .task-num { font-family: 'DM Mono', monospace; font-size: 18px; color: var(--accent); font-weight: 400; line-height: 1; min-width: 28px; }
+  .task-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .task-card p { font-size: 12px; color: var(--ink2); line-height: 1.6; }
+
+  /* PHASE */
+  .phase-list { display: flex; flex-direction: column; gap: 0; }
+  .phase-item { display: flex; gap: 24px; align-items: flex-start; padding: 24px 0; border-bottom: 1px solid var(--border); }
+  .phase-item:last-child { border-bottom: none; }
+  .phase-dot { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: #fff; font-family: 'DM Mono', monospace; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .phase-content h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .phase-content .phase-time { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 6px; }
+  .phase-content p { font-size: 13px; color: var(--ink2); line-height: 1.6; }
+
+  /* COST */
+  .cost-table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); margin-bottom: 24px; }
+  .cost-table th { background: var(--accent); color: #fff; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; padding: 12px 16px; text-align: left; }
+  .cost-table td { padding: 12px 16px; font-size: 13px; border-bottom: 1px solid var(--border); color: var(--ink2); }
+  .cost-table tr:last-child td { border-bottom: none; }
+  .cost-table td strong { color: var(--ink); font-weight: 700; }
+
+  /* CONDITIONS */
+  .cond-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .cond-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+  .cond-icon { font-size: 24px; margin-bottom: 8px; }
+  .cond-card h4 { font-size: 12px; font-weight: 700; color: var(--ink3); margin-bottom: 4px; }
+  .cond-card p { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .cond-card span { font-size: 12px; color: var(--ink3); }
+  .caution-box { background: var(--gold-light); border: 1px solid var(--gold); border-radius: var(--radius); padding: 16px 20px; font-size: 13px; color: var(--ink2); margin-top: 20px; line-height: 1.7; }
+
+  /* COMMENT */
+  .comment-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow); position: relative; }
+  .comment-box::before { content: '"'; font-family: 'Playfair Display', serif; font-size: 96px; color: var(--accent); opacity: 0.15; position: absolute; top: -8px; left: 20px; line-height: 1; }
+  .comment-box blockquote { font-family: 'Noto Serif JP', serif; font-size: 15px; line-height: 1.9; color: var(--ink2); position: relative; z-index: 1; margin-bottom: 12px; }
+  .comment-box .comment-by { font-size: 12px; color: var(--ink3); font-family: 'DM Mono', monospace; letter-spacing: 0.05em; }
+
+  /* CLOSING */
+  #closing { background: var(--ink); color: #fff; max-width: 100%; padding: 96px 24px; text-align: center; }
+  .closing-inner { max-width: 700px; margin: 0 auto; }
+  .closing-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.3em; opacity: 0.5; text-transform: uppercase; margin-bottom: 24px; }
+  .closing-title { font-family: 'Noto Serif JP', serif; font-size: clamp(22px, 4vw, 36px); font-weight: 700; line-height: 1.5; margin-bottom: 24px; }
+  .closing-body { font-size: 14px; opacity: 0.75; line-height: 1.9; margin-bottom: 40px; }
+  .key-message { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 28px 32px; margin: 32px 0; text-align: left; }
+  .key-message .km-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; opacity: 0.5; margin-bottom: 12px; }
+  .key-message p { font-family: 'Noto Serif JP', serif; font-size: 15px; line-height: 1.9; opacity: 0.9; }
+  .approval-box { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; padding: 28px; margin-top: 32px; text-align: left; }
+  .approval-box h4 { font-size: 13px; font-weight: 700; opacity: 0.6; margin-bottom: 16px; letter-spacing: 0.05em; }
+  .approval-box p { font-size: 14px; line-height: 2; }
+  .approval-box strong { color: #9de0b8; }
+  .meta { margin-top: 48px; font-size: 11px; opacity: 0.35; font-family: 'DM Mono', monospace; letter-spacing: 0.08em; }
+
+  /* NEGATIVE WILL */
+  .nwill-box { background: #fff8f0; border: 1px solid #e8c9a0; border-radius: var(--radius); padding: 20px 24px; margin-top: 24px; }
+  .nwill-box h4 { font-size: 13px; font-weight: 700; color: #a0623a; margin-bottom: 10px; }
+  .nwill-box ul { list-style: none; padding: 0; }
+  .nwill-box li { font-size: 13px; color: var(--ink2); padding: 4px 0; border-bottom: 1px dashed #e8c9a0; }
+  .nwill-box li:last-child { border-bottom: none; }
+  .nwill-box li::before { content: '⚠ '; opacity: 0.6; }
+
+  /* CERTS */
+  .cert-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .cert-tag { background: var(--accent-light); border: 1px solid var(--accent2); color: var(--accent); border-radius: 20px; padding: 4px 14px; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#cover">表紙</a>
+  <a href="#profile">プロフィール</a>
+  <a href="#career">経歴・スキル</a>
+  <a href="#strengths">強み・志</a>
+  <a href="#evaluation">評価</a>
+  <a href="#aptitude">適性</a>
+  <a href="#hopes">希望・価値観</a>
+  <a href="#position">ポジション</a>
+  <a href="#cost">コスト</a>
+  <a href="#conditions">稼働条件</a>
+  <a href="#closing">承認</a>
+</nav>
+
+<!-- ── COVER ── -->
+<section id="cover" style="border-bottom:none;">
+  <div class="cover-inner">
+    <div class="cover-label">ASSIGNMENT PROPOSAL · 2026.05</div>
+    <div class="cover-name">TANIGUCHI</div>
+    <div class="cover-name-ja">谷口 星河（タニグチ セイガ）｜オンボーディング卒業面談</div>
+    <div class="cover-role">
+      <strong>人事採用・教育チーム パートナー</strong><br>
+      「継続の力で価値を磨き、言葉とAIで<em>自分で稼ぐ可能性</em>を形にする」<br>
+      本業11年の人事経験を活かし、組織体制整備を支える即戦力
+    </div>
+    <div class="cover-notice">📌 当初はオンライン秘書・ライター業務での応募でしたが、本人の適性・経験を踏まえて人事採用ポジションへ変更しています</div>
+    <div class="cover-pills">
+      <span class="cover-pill">採用枠: 業務委託パートナー</span>
+      <span class="cover-pill">稼働: 早朝・夕方・休日帯</span>
+      <span class="cover-pill">キタさん合意済み</span>
+    </div>
+    <div class="summary-row">
+      <div class="summary-pill" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:#fff;">
+        <div class="sp-num" style="color:#9de0b8;">SUMMARY 01</div>
+        <h3 style="color:#fff;">本業11年の人事経験</h3>
+        <p style="color:rgba(255,255,255,0.6);">人事異動・評価・採用・労働組合対応まで幅広く経験した実践者</p>
+      </div>
+      <div class="summary-pill" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:#fff;">
+        <div class="sp-num" style="color:#9de0b8;">SUMMARY 02</div>
+        <h3 style="color:#fff;">AI・ライター複合スキル</h3>
+        <p style="color:rgba(255,255,255,0.6);">ChatGPT/Claude活用力5段階4 ＋ 文章作成5。言語化能力が高い</p>
+      </div>
+      <div class="summary-pill" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:#fff;">
+        <div class="sp-num" style="color:#9de0b8;">SUMMARY 03</div>
+        <h3 style="color:#fff;">キタさん・本人 合意済み</h3>
+        <p style="color:rgba(255,255,255,0.6);">即時稼働可能。Notion/Discord習熟から着実にスタート</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROFILE ── -->
+<section id="profile">
+  <div class="page-label">PAGE 01 · PROFILE</div>
+  <h2 class="sec-title">基本プロフィール</h2>
+  <p class="sec-sub">2014年から11年以上インフラ業界の人事・採用・労務を担当。副業ライターとしても活動中のマルチスキル人材。</p>
+
+  <div class="profile-grid">
+    <div class="profile-card">
+      <h4>氏名</h4>
+      <p class="val">谷口 星河（タニグチ セイガ）</p>
+      <p style="font-size:12px;color:var(--ink3);">呼称: せいが　/ 年齢: 35歳</p>
+    </div>
+    <div class="profile-card">
+      <h4>現在のステータス</h4>
+      <p class="val">業務委託パートナー（オンボーディング卒業）</p>
+    </div>
+    <div class="profile-card">
+      <h4>本業 / 副業状況</h4>
+      <p>会社員（インフラ業界 人事・採用・労務）<br>副業ライターとして活動中</p>
+    </div>
+    <div class="profile-card">
+      <h4>対応可能時間</h4>
+      <p class="val">4:00〜8:00、17:30〜20:00</p>
+      <p style="font-size:12px;color:var(--ink3);">※日中も対応可能だが細切れでの対応</p>
+    </div>
+    <div class="profile-card">
+      <h4>対応可能曜日</h4>
+      <p class="val">月・火・水・木・金・土・日（全日対応可）</p>
+    </div>
+    <div class="profile-card">
+      <h4>稼働場所</h4>
+      <p>フルリモート優先<br><span style="font-size:12px;color:var(--ink3);">関西在住のため出社も可能</span></p>
+    </div>
+    <div class="profile-card">
+      <h4>家族状況</h4>
+      <p>妻・子供1人（7歳）<br><span style="font-size:12px;color:var(--ink3);">育児中（中期ライフイベントあり）</span></p>
+    </div>
+    <div class="profile-card">
+      <h4>紹介元 / アサイン合意者</h4>
+      <p>クラウドワークス経由<br><span class="val">キタさん（人事・教育部門）</span></p>
+    </div>
+    <div class="profile-card">
+      <h4>Discord ID</h4>
+      <p class="val">gutsuchiyan0200</p>
+    </div>
+    <div class="profile-card">
+      <h4>連絡先</h4>
+      <p>gaa.see24@gmail.com<br>090-5065-5519</p>
+    </div>
+  </div>
+
+  <div class="org-block">
+    <h4>🏢 関係する組織体制（参考）</h4>
+    <ul>
+      <li><strong>キタさん</strong>（人事・教育部門 担当） — アサイン合意者・メンター</li>
+      <li>谷口 星河さん（提案） — 採用人事・教育チーム パートナー</li>
+      <li>ハナモトさん — 面接・合格者面談担当（紹介者）</li>
+      <li>サトウさん（代表） — 全体統括</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── CAREER & SKILLS ── -->
+<section id="career">
+  <div class="page-label">PAGE 02 · CAREER & SKILLS</div>
+  <h2 class="sec-title">経歴・スキルセット</h2>
+  <p class="sec-sub">インフラ業界11年の人事一筋キャリアに、AI活用力と文章作成力を掛け合わせた希少な複合人材。</p>
+
+  <table class="skill-table">
+    <thead>
+      <tr>
+        <th>期間</th>
+        <th>業界</th>
+        <th>役割・ポジション</th>
+        <th>主な業務・実績</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>2014年4月〜現在</strong><br>（11年以上）</td>
+        <td>インフラ</td>
+        <td>マネージャー</td>
+        <td>人事・採用 / 労働組合対応 / 営業事務</td>
+      </tr>
+      <tr>
+        <td>副業（並行）</td>
+        <td>ライター・AI活用</td>
+        <td>フリーライター</td>
+        <td>副業ライターとして稼働。AIツール活用し収益向上中</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:'Noto Serif JP',serif;font-size:18px;margin-bottom:16px;">保有スキル・得意領域</h3>
+  <table class="skill-table">
+    <thead>
+      <tr><th>カテゴリ</th><th>スキル名</th><th>レベル</th><th>本人コメント</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>コミュニケーション</td>
+        <td>ヒアリング・要件定義</td>
+        <td><div class="skill-level"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div></td>
+        <td>得意</td>
+      </tr>
+      <tr>
+        <td>AI活用</td>
+        <td>ChatGPT / Genspark / Claude</td>
+        <td><div class="skill-level"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div></td>
+        <td>Claude Code導入予定</td>
+      </tr>
+      <tr>
+        <td>AI活用</td>
+        <td>GPTs / Gems 活用ツール作成</td>
+        <td><div class="skill-level"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div></td>
+        <td>方法は理解</td>
+      </tr>
+      <tr>
+        <td>クリエイティブ</td>
+        <td>文章作成（ライター）</td>
+        <td><div class="skill-level"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div></td>
+        <td>対応可。副業ライターとして実績あり</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:'Noto Serif JP',serif;font-size:18px;margin:20px 0 12px;">保有資格・認定</h3>
+  <div class="cert-grid">
+    <span class="cert-tag">📋 メンタルヘルスマネジメント検定 ラインケア</span>
+    <span class="cert-tag">📋 日商簿記3級</span>
+    <span class="cert-tag">🔥 防火管理者</span>
+    <span class="cert-tag">⚙️ 安全管理者</span>
+  </div>
+</section>
+
+<!-- ── STRENGTHS ── -->
+<section id="strengths">
+  <div class="page-label">PAGE 03 · STRENGTHS & VISION</div>
+  <h2 class="sec-title">強み・志（Will / Can / Must）</h2>
+  <p class="sec-sub">「継続の力で価値を磨き、言葉とAIで自分で稼ぐ可能性を形にする」——これが谷口さんの立志。</p>
+
+  <div class="strength-grid">
+    <div class="strength-card">
+      <div class="strength-num">STRENGTH 01</div>
+      <h4>人間関係重視 / 信頼構築</h4>
+      <p>派手さでなく、信頼を積み上げて周囲が動きやすい形をつくる力。</p>
+    </div>
+    <div class="strength-card">
+      <div class="strength-num">STRENGTH 02</div>
+      <h4>計画性 / 秩序感覚</h4>
+      <p>整理力で混乱しがちな立ち上げ期の運営を安定軌道に乗せる。</p>
+    </div>
+    <div class="strength-card">
+      <div class="strength-num">STRENGTH 03</div>
+      <h4>課題解決力 / 論理的思考</h4>
+      <p>要件定義・ヒアリングを通じて本質的な課題を抽出。</p>
+    </div>
+    <div class="strength-card">
+      <div class="strength-num">STRENGTH 04</div>
+      <h4>4軸のバランス</h4>
+      <p>創造的・対人的・組織的・分析的が均等で、領域横断で動ける希少なタイプ。</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="wcm-grid">
+    <div class="wcm-card">
+      <div class="wcm-label">WILL · 目指したい姿</div>
+      <h4>家族との豊かな時間と<br>収入の複数の柱</h4>
+      <p>家族と思い切りゆっくりしたい。子供にたくさんの経験をさせてやりたい。本業に加えて収入の柱とスキルを増やす。</p>
+    </div>
+    <div class="wcm-card">
+      <div class="wcm-label">CAN · 持ち味</div>
+      <h4>人事経験 × 言語化能力</h4>
+      <p>多くの人間を見てきた人事経験とライターとして培った言語化能力で、人やチームが本来の力を発揮できる状態をつくる。</p>
+    </div>
+    <div class="wcm-card">
+      <div class="wcm-label">MUST · 求められること</div>
+      <h4>AI活用で働きやすい<br>環境づくり</h4>
+      <p>AIを活用し業務とコミュニケーションを整え、人やチームがより価値ある仕事に集中できる状態をつくる。</p>
+    </div>
+  </div>
+
+  <div class="nwill-box" style="margin-top:24px;">
+    <h4>⚠️ ネガティブWill（やりたくないこと・避けたいこと）</h4>
+    <ul>
+      <li><strong>やりたくない業務:</strong> 明らかに非効率な業務。意味・成果がない業務</li>
+      <li><strong>苦手な働き方:</strong> 目的が不明瞭なまま仕事を進めること</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── EVALUATION ── -->
+<section id="evaluation">
+  <div class="page-label">PAGE 04 · EVALUATION FROM KITA</div>
+  <h2 class="sec-title">キタさんからの評価ポイント</h2>
+  <p class="sec-sub">シートの自己評価と面談内容を踏まえた、6つの評価軸。</p>
+
+  <div class="eval-grid">
+    <div class="eval-card">
+      <div class="eval-num">POINT 01</div>
+      <h4>ビジネス的な信頼性・安心感</h4>
+      <ul>
+        <li>任せても不安がない</li>
+        <li>状況に応じた柔軟判断</li>
+        <li>自己評価: ★★★★☆（4/5）</li>
+      </ul>
+      <div class="quote">「率直に意見を言える。おかしいよね、と言える関係感」</div>
+    </div>
+    <div class="eval-card">
+      <div class="eval-num">POINT 02</div>
+      <h4>組織の調整力・橋渡し力</h4>
+      <ul>
+        <li>人と人のズレを埋める</li>
+        <li>労組対応で仲裁経験あり</li>
+        <li>自己評価: ★★★★☆（4/5）</li>
+      </ul>
+      <div class="quote">「社員との揉め事の仲裁は日常茶飯事。得意だと思う」（本人）</div>
+    </div>
+    <div class="eval-card">
+      <div class="eval-num">POINT 03</div>
+      <h4>人材マネジメントへの期待</h4>
+      <ul>
+        <li>ディレクターの質を上げる</li>
+        <li>働きやすい環境を作れる</li>
+        <li>自己評価: ★★★★☆（4/5）</li>
+      </ul>
+      <div class="quote">「人間関係が大切。正論ばかりでは組織が潰れる」（本人）</div>
+    </div>
+    <div class="eval-card">
+      <div class="eval-num">POINT 04</div>
+      <h4>構造化・整理能力（中核スキル）</h4>
+      <ul>
+        <li>状況を整理・抽象と具体をつなぐ</li>
+        <li>ヒアリング力 ★★★★☆（4/5）</li>
+      </ul>
+      <div class="quote">「かなり現実的な意見になる。まずは組織の内情をしっかり把握したい」（本人）</div>
+    </div>
+    <div class="eval-card">
+      <div class="eval-num">POINT 05</div>
+      <h4>持続性志向（組織づくりの軸）</h4>
+      <ul>
+        <li>辛い100点より笑顔の80点</li>
+        <li>継続性を重視したスタンス</li>
+      </ul>
+      <div class="quote">「辛い100点は続かない。ブラッシュアップする姿勢があればOK」（本人）</div>
+    </div>
+    <div class="eval-card">
+      <div class="eval-num">POINT 06</div>
+      <h4>AI・学習への前向きな意欲</h4>
+      <ul>
+        <li>ChatGPT/Claude活用 ★★★★☆</li>
+        <li>文章作成 ★★★★★（5/5）</li>
+        <li>Claude Code導入予定</li>
+      </ul>
+      <div class="quote">「新領域への関心は高い。ライター業でも活用している」（本人）</div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;">
+    <div class="comment-box">
+      <blockquote>
+        まあ結論からいくと、私と一緒に人事採用・教育・人材開発のあたりを進めていきたいなと思っています。ただ、NotionとDiscordの使い方がまだ慣れていないので、まずは慣れるところから。ちょっとした細々とした作業をお願いするところから始めていきたいと思っています。本人もご了承済みです。
+      </blockquote>
+      <div class="comment-by">— キタさん（人事・教育部門 担当 ／ アサイン合意者）</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── APTITUDE ── -->
+<section id="aptitude">
+  <div class="page-label">PAGE 05 · APTITUDE ANALYSIS</div>
+  <h2 class="sec-title">適性分析（8項目）</h2>
+  <p class="sec-sub">本人コメントを含む、シート記載の適性分析全8項目。強みの本質は「理想を、現実に変換できる」。</p>
+
+  <div class="apt-grid">
+    <div class="apt-card">
+      <div class="apt-num">APTITUDE 01</div>
+      <h4>構造化・整理能力（中核スキル）</h4>
+      <div class="scene">混乱した組織で最も価値が出る</div>
+      <p>状況を整理して理解。抽象と具体をつなぐ。「どう回すか」に思考が向く。</p>
+      <div class="self">「抽象と具体をつなぐとかなり現実的な意見になると思う」</div>
+    </div>
+    <div class="apt-card">
+      <div class="apt-num">APTITUDE 02</div>
+      <h4>実行ベースのディレクション力</h4>
+      <div class="scene">設計だけでなく「回せる人」</div>
+      <p>理想論ではなく実行へ。現場理解の上で設計。オペレーション視点を持つ。</p>
+      <div class="self">「まずは組織の内情をしっかり把握したい」</div>
+    </div>
+    <div class="apt-card">
+      <div class="apt-num">APTITUDE 03</div>
+      <h4>調整力・バランス感覚</h4>
+      <div class="scene">緩衝材として機能</div>
+      <p>人と人の間に入れる。対立・ズレを吸収。極端に偏らない判断。</p>
+      <div class="self">「社員との揉め事の仲裁は日常茶飯事。得意だと思う」</div>
+    </div>
+    <div class="apt-card">
+      <div class="apt-num">APTITUDE 04</div>
+      <h4>マネジメント適性（成熟型）</h4>
+      <div class="scene">実務経験型マネジメント</div>
+      <p>「人は正しさで動かない」。現実的なマネジメント観。関係性重視。</p>
+      <div class="self">「人間関係が大切。正論ばかりでは組織が潰れる」</div>
+    </div>
+    <div class="apt-card">
+      <div class="apt-num">APTITUDE 05</div>
+      <h4>持続性志向（組織づくりの軸）</h4>
+      <div class="scene">拡大フェーズの組織と相性◎</div>
+      <p>「笑顔の80点」を重視。短期より継続性優先。無理のない運用設計。</p>
+      <div class="self">「辛い100点は続かない。ブラッシュアップする姿勢があればOK」</div>
+    </div>
+    <div class="apt-card">
+      <div class="apt-num">APTITUDE 06</div>
+      <h4>現場理解を重視する姿勢</h4>
+      <div class="scene">現実に強い判断ができる</div>
+      <p>現場に出続けたい意向。実態を知らない状態を嫌う。</p>
+      <div class="self">「現場が最優先。現場を理解していない経営層の指示ほど意味のないものはない」</div>
+    </div>
+    <div class="apt-card">
+      <div class="apt-num">APTITUDE 07</div>
+      <h4>慎重かつ現実的な意思決定</h4>
+      <div class="scene">失敗確率が低いタイプ</div>
+      <p>いきなり責任を取らない。試しながら関わる。信頼関係を重視。</p>
+      <div class="self">「よく現実的だと言われる。理想はもっとリスクをとって冒険したい」</div>
+    </div>
+    <div class="apt-card">
+      <div class="apt-num">APTITUDE 08</div>
+      <h4>学習・成長志向</h4>
+      <div class="scene">長期的に伸びる人材</div>
+      <p>新領域（AI）への関心が高い。知見を蓄積し拡張する姿勢。</p>
+      <div class="self">「新領域への関心は高い。ライター業でも活用している」</div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;background:var(--accent);color:#fff;border-radius:var(--radius);padding:24px;text-align:center;">
+    <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;opacity:0.7;margin-bottom:8px;">強みの本質</div>
+    <div style="font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;">理想を、現実に変換できる</div>
+  </div>
+</section>
+
+<!-- ── HOPES ── -->
+<section id="hopes">
+  <div class="page-label">PAGE 06 · HOPES & VALUES</div>
+  <h2 class="sec-title">希望業務 ＆ 思考・価値観</h2>
+  <p class="sec-sub">希望順位1位はAI導入支援。人事採用は3位。ゆくゆくはAI活用・マーケ領域への展開を強く希望している。</p>
+
+  <div class="hopes-grid">
+    <div class="hope-card">
+      <div class="hope-num">1</div>
+      <div>
+        <h4>AI導入支援</h4>
+        <p>「AIが使えてなんぼ」。日本企業のAI活用は需要だらけだと確信。佐藤さんのセミナー動画で中小企業の危機感を認識。</p>
+      </div>
+    </div>
+    <div class="hope-card">
+      <div class="hope-num">2</div>
+      <div>
+        <h4>マーケティング</h4>
+        <p>「ものを売る・人を動かすスキルはAIに取られない」。腕を磨きたい領域として明確に意識。</p>
+      </div>
+    </div>
+    <div class="hope-card">
+      <div class="hope-num">3</div>
+      <div>
+        <h4>採用・人事</h4>
+        <p>本業スキルが活かせる。御社からお声がけいただいたため応じた形。即戦力として貢献可能。</p>
+      </div>
+    </div>
+    <div class="hope-card">
+      <div class="hope-num">4</div>
+      <div>
+        <h4>オンライン秘書</h4>
+        <p>今回の応募職種。ライターや本業スキルを活かせると思い志望。入り口として有効。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3 style="font-family:'Noto Serif JP',serif;font-size:18px;margin-bottom:16px;">思考・価値観</h3>
+  <div class="value-grid">
+    <div class="value-card">
+      <div class="vi">⚡</div>
+      <h4>スピード感重視</h4>
+      <p>60点でもガンガン提出。スピード感のある組織が心地よい</p>
+    </div>
+    <div class="value-card">
+      <div class="vi">🎯</div>
+      <h4>実行可能性重視</h4>
+      <p>理想論より現場で回るかどうかを優先する</p>
+    </div>
+    <div class="value-card">
+      <div class="vi">🤝</div>
+      <h4>関係性で人は動く</h4>
+      <p>ギブ・アンド・テイクの関係性こそが組織を動かす</p>
+    </div>
+    <div class="value-card">
+      <div class="vi">🌱</div>
+      <h4>試しながら拡張</h4>
+      <p>多少のリスクは仕方ない。試して学ぶ姿勢</p>
+    </div>
+    <div class="value-card">
+      <div class="vi">📚</div>
+      <h4>成長ドリブン</h4>
+      <p>金銭より経験・学習価値。スキルが付けば金銭につながる</p>
+    </div>
+  </div>
+
+  <div class="caution-box" style="margin-top:24px;">
+    ⏰ <strong>稼働の配慮事項：</strong>日中は本業があるため、細切れでの作業になります。MTへの参加も頻繁には難しい。早朝（4:00〜8:00）・夕方（17:30〜20:00）・休日帯が主な稼働時間。中期ライフイベント（育児）への配慮も継続。
+  </div>
+</section>
+
+<!-- ── POSITION ── -->
+<section id="position">
+  <div class="page-label">PAGE 07 · PROPOSED POSITION</div>
+  <h2 class="sec-title">提案するポジション</h2>
+  <p class="sec-sub">まず採用人事から。ツール習熟と信頼形成を経て、組織体制整備・KPI設計へ。将来はAI導入支援・マーケティングへの展開も視野。</p>
+
+  <div class="position-hero">
+    <div class="pos-label">PROPOSED ROLE</div>
+    <h3>人事採用・教育チーム<br>パートナー</h3>
+    <div class="future">FUTURE: AI導入支援 → マーケティング → 業務改善ディレクターへの派生も検討</div>
+  </div>
+
+  <div class="tasks-grid">
+    <div class="task-card">
+      <div class="task-num">1</div>
+      <div>
+        <h4>細々とした人事作業（習熟期）</h4>
+        <p>NotionとDiscordを実業務で習熟するための軽作業から開始。議事録作成・情報整理・オンボーディング業務など。</p>
+      </div>
+    </div>
+    <div class="task-card">
+      <div class="task-num">2</div>
+      <div>
+        <h4>採用人事サポート</h4>
+        <p>書類選考・面談調整・候補者管理など。本業11年の人事経験を活かし即戦力として参加。</p>
+      </div>
+    </div>
+    <div class="task-card">
+      <div class="task-num">3</div>
+      <div>
+        <h4>組織体制整備の壁打ち</h4>
+        <p>ポジショニングマップ・組織図の整備に向けて、キタさんと二人三脚でKPI設計・定性・定量評価を検討。「おかしいよね」と言い合える関係感で進める。</p>
+      </div>
+    </div>
+    <div class="task-card">
+      <div class="task-num">4</div>
+      <div>
+        <h4>人事評価制度の設計サポート</h4>
+        <p>誰が上司で誰に相談すべきかを可視化し、メンバーへ共有できる体制づくりを支援。人事評価の実務経験を活用。</p>
+      </div>
+    </div>
+    <div class="task-card">
+      <div class="task-num">5</div>
+      <div>
+        <h4>請求書・労務管理への知見提供</h4>
+        <p>人事が統括する請求書管理・労務対応に関する知見を共有。メンタルヘルス検定・簿記3級の資格も活用。</p>
+      </div>
+    </div>
+    <div class="task-card">
+      <div class="task-num">6</div>
+      <div>
+        <h4>（将来）AI導入支援・マーケティング</h4>
+        <p>本人の第1・第2希望。組織が整い次第、AI活用支援・マーケ領域へ展開。文章作成力（★5）とAI活用力（★4）を存分に活かす場。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3 style="font-family:'Noto Serif JP',serif;font-size:18px;margin-bottom:20px;">段階的な関与プラン（本人の「試しながら関与拡大」スタンスに沿った設計）</h3>
+  <div class="phase-list">
+    <div class="phase-item">
+      <div class="phase-dot">1</div>
+      <div class="phase-content">
+        <div class="phase-time">PHASE 1 · 1週間〜1ヶ月目</div>
+        <h4>ツール習熟 × 軽作業から開始</h4>
+        <p>NotionとDiscordに慣れるための細々とした人事作業から。議事録作成・情報整理・オンボーディング業務を通じて、組織への理解を深める。</p>
+      </div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-dot">2</div>
+      <div class="phase-content">
+        <div class="phase-time">PHASE 2 · 1〜3ヶ月目</div>
+        <h4>採用人事・組織体制整備を本格化</h4>
+        <p>採用サポート・人事評価制度の壁打ち・KPI設計への参加。ポジショニングマップの整備で組織の「見える化」を推進。キタさんとのすり合わせを継続。</p>
+      </div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-dot">3</div>
+      <div class="phase-content">
+        <div class="phase-time">PHASE 3 · 3ヶ月目〜</div>
+        <h4>AI導入支援・マーケへ派生 ＋ プロフィットメーカー昇格</h4>
+        <p>組織が整い、本人の意欲と稼働状況が整ったタイミングでAI活用支援・マーケ業務へ展開。「継続の力で価値を磨く」立志に沿ったキャリアパスへ。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COST ── -->
+<section id="cost">
+  <div class="page-label">PAGE 08 · COST</div>
+  <h2 class="sec-title">稼働コスト試算</h2>
+  <p class="sec-sub">副業帯での稼働を前提にした、無理のない設計。組織整備が進む中で貢献度に応じて昇格を検討。</p>
+
+  <table class="cost-table">
+    <thead>
+      <tr>
+        <th>期間</th>
+        <th>役職</th>
+        <th>時給</th>
+        <th>稼働目安</th>
+        <th>月額コスト（目安）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>初期（習熟期）</td>
+        <td>業務委託パートナー（トレイニー卒業）</td>
+        <td><strong>要確認</strong></td>
+        <td>早朝・夕方・休日帯中心</td>
+        <td><strong>要確認</strong></td>
+      </tr>
+      <tr>
+        <td>3ヶ月目〜</td>
+        <td>プロフィットメーカー（昇格）</td>
+        <td><strong>要確認</strong></td>
+        <td>貢献度・稼働量に応じて調整</td>
+        <td><strong>要確認</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="caution-box">
+    💡 <strong>ポイント：</strong>副業帯（早朝4:00〜8:00・夕方17:30〜20:00・休日）での稼働のため、日中コアタイム（セールス・マーケ・ディレクション業務）への即時対応は現時点では難しい。採用人事・教育チームのバックオフィス系業務を中心にアサイン。稼働量は本人の本業状況と育児状況に応じて柔軟調整。
+  </div>
+</section>
+
+<!-- ── CONDITIONS ── -->
+<section id="conditions">
+  <div class="page-label">PAGE 09 · WORKING CONDITIONS</div>
+  <h2 class="sec-title">想定する稼働条件</h2>
+  <p class="sec-sub">本業・育児との両立を前提に、無理なく続けられる条件設計。</p>
+
+  <div class="cond-grid">
+    <div class="cond-card">
+      <div class="cond-icon">⏰</div>
+      <h4>稼働時間帯</h4>
+      <p>4:00〜8:00 / 17:30〜20:00</p>
+      <span>早朝・夕方・休日帯。日中は細切れ対応</span>
+    </div>
+    <div class="cond-card">
+      <div class="cond-icon">📅</div>
+      <h4>稼働曜日</h4>
+      <p>月〜日（全日対応可）</p>
+      <span>柔軟対応。MTへの頻繁な参加は困難</span>
+    </div>
+    <div class="cond-card">
+      <div class="cond-icon">🏠</div>
+      <h4>稼働場所</h4>
+      <p>フルリモート優先</p>
+      <span>関西在住のため出社も可能</span>
+    </div>
+    <div class="cond-card">
+      <div class="cond-icon">🚀</div>
+      <h4>稼働開始</h4>
+      <p>即時可能</p>
+      <span>本人合意済み・本契約へ移行完了</span>
+    </div>
+    <div class="cond-card">
+      <div class="cond-icon">🔗</div>
+      <h4>連携体制</h4>
+      <p>キタさん主導</p>
+      <span>人事・教育チームと Discord / Notion で連携</span>
+    </div>
+    <div class="cond-card">
+      <div class="cond-icon">📋</div>
+      <h4>契約形態</h4>
+      <p>業務委託（本契約）</p>
+      <span>クラウドワークス終了・本契約へ移行済み</span>
+    </div>
+  </div>
+
+  <div class="caution-box">
+    📌 <strong>配慮ポイント：</strong>本業（日中）と育児（7歳のお子様）があるため、日中の即時返信・コアタイム対応は難しい状況。セールス・マーケ・ディレクション業務へのアサインは現時点では見送り。採用人事・教育チームのバックオフィス業務を中心に、副業帯で無理なく貢献できる体制を整える。
+  </div>
+</section>
+
+<!-- ── CLOSING ── -->
+<section id="closing" style="border-bottom:none;">
+  <div class="closing-inner">
+    <div class="closing-label">FINAL · APPROVAL REQUEST</div>
+    <h2 class="closing-title">
+      11年の人事経験を持つ「壁打ち相手」として、<br>組織体制整備を一緒に進める即戦力
+    </h2>
+    <p class="closing-body">
+      人事異動・人事評価・採用・労働組合対応の実務経験に加え、AI活用力（★4）と文章作成力（★5）を兼ね備え、副業帯での柔軟な稼働も可能。本人の「試しながら関与拡大」スタンスと、キタさんの「一緒に作っていきたい」という思いが一致。<br>
+      まずはNotionとDiscordに慣れるところから着実にスタートし、採用人事→組織体制整備→将来的にはAI導入支援・マーケティングへの派生を見据えた設計です。
+    </p>
+
+    <div class="key-message">
+      <div class="km-label">KEY MESSAGE</div>
+      <p>
+        「人事経験者をゼロから採用する」のではなく、<br>
+        「本業11年で人事を回してきた実践者に副業帯で伴走してもらい、<br>
+        組織の体制整備を一緒に進める」アサインです。<br>
+        将来のAI導入支援・マーケ展開は、本人の第1・第2希望とも完全一致。
+      </p>
+    </div>
+
+    <div class="approval-box">
+      <h4>📋 ご承認をお願いしたい事項</h4>
+      <p>
+        谷口 星河さんを<br>
+        <strong>人事採用・教育チーム パートナー</strong><br>
+        として正式アサインすること<br><br>
+        ・初期：NotionとDiscord習熟 × 細々とした人事作業からスタート<br>
+        ・中期：採用人事サポート・組織体制整備・KPI設計への参加<br>
+        ・長期：AI導入支援・マーケティングへの派生を検討<br>
+        ・併せてトレイニー卒業・次職位（プロフィットメーカー）への昇格を承認
+      </p>
+    </div>
+
+    <div class="meta">
+      作成: キタさん（人事・教育部門） ／ 作成日: 2026年5月
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
