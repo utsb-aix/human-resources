@@ -1,0 +1,706 @@
+---
+meta-viewport: width=device-width, initial-scale=1.0
+title: 田中なお | オンボーディング卒業面談資料
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>田中なお | オンボーディング卒業面談資料</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', 'Helvetica', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 60px 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .nav {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #1F497D;
+        }
+        .nav a {
+            display: inline-block;
+            margin: 0 15px;
+            color: #2E75B6;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .cover {
+            text-align: center;
+            margin-bottom: 80px;
+            padding: 60px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .cover h1 {
+            font-size: 48px;
+            color: #1F497D;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .cover .subtitle {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        .cover .name {
+            font-size: 36px;
+            font-weight: bold;
+            color: #1F497D;
+            margin: 30px 0;
+        }
+        .cover .meta {
+            font-size: 13px;
+            color: #999;
+            margin-top: 30px;
+        }
+        .section {
+            margin-bottom: 80px;
+        }
+        .page-header {
+            font-size: 11px;
+            color: #999;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 32px;
+            color: #1F497D;
+            margin-bottom: 20px;
+            font-weight: bold;
+            border-bottom: 3px solid #1F497D;
+            padding-bottom: 10px;
+        }
+        h3 {
+            font-size: 20px;
+            color: #2E75B6;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        h4 {
+            font-size: 16px;
+            color: #2E75B6;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #404040;
+        }
+        .summary-box {
+            background-color: #D9E8F7;
+            border-left: 4px solid #2E75B6;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .summary-box .label {
+            font-size: 12px;
+            color: #2E75B6;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .summary-box .title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1F497D;
+            margin-bottom: 10px;
+        }
+        .summary-box .content {
+            font-size: 14px;
+            color: #404040;
+            line-height: 1.6;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th {
+            background-color: #1F497D;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        td {
+            border-bottom: 1px solid #ddd;
+            padding: 12px;
+            font-size: 14px;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        ul {
+            margin: 15px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 10px;
+            color: #404040;
+            line-height: 1.6;
+        }
+        .strength {
+            background-color: #D9E8F7;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .strength-title {
+            font-weight: bold;
+            color: #1F497D;
+            margin-bottom: 8px;
+        }
+        .phase {
+            background-color: #FFF2CC;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #F79646;
+        }
+        .phase-title {
+            font-weight: bold;
+            color: #2E75B6;
+            margin-bottom: 10px;
+        }
+        .key-message {
+            background-color: #FFF2CC;
+            border: 2px solid #F79646;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .key-message p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1F497D;
+            margin: 10px 0;
+        }
+        .rating {
+            font-size: 18px;
+            color: #C0504D;
+            font-weight: bold;
+        }
+        .issue-red {
+            background-color: #F4CCCC;
+            border-left: 4px solid #C0504D;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .issue-yellow {
+            background-color: #FFF2CC;
+            border-left: 4px solid #F79646;
+            padding: 20px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <div class="nav">
+            <a href="#cover">表紙</a>
+            <a href="#profile">プロフィール</a>
+            <a href="#career">経歴</a>
+            <a href="#strengths">強み・志</a>
+            <a href="#evaluation">評価</a>
+            <a href="#aptitude">適性</a>
+            <a href="#hopes">希望・価値観</a>
+            <a href="#issue">課題と解決</a>
+            <a href="#position">ポジション</a>
+            <a href="#outcome">期待効果</a>
+            <a href="#conditions">配置条件</a>
+            <a href="#closing">承認</a>
+        </div>
+
+        <!-- COVER -->
+        <div id="cover" class="cover">
+            <div class="subtitle">ONBOARDING COMPLETION INTERVIEW PROPOSAL · 2026.06</div>
+            <h1>田中 なお</h1>
+            <div class="name">TANAKA NAO</div>
+            
+            <p style="font-size: 16px; color: #666; margin: 40px 0;">
+                <strong>採用業務 × オンライン秘書 × AI自動化領域のハイブリッド人材</strong>
+            </p>
+            
+            <p style="font-size: 14px; line-height: 1.8; color: #555; margin: 30px 20px;">
+                オンボーディング期間を通じて、実装力・学習志向・チーム適応力を実証した実績型新卒人材。<br/>
+                採用業務への即時ニーズと本人のCS・AI自動化領域への興味を両立させ、<br/>
+                段階的キャリア展開で中長期の成長機会を設計することを推奨します。
+            </p>
+
+            <div class="meta">
+                <strong>SUMMARY 01</strong><br/>正式採用決定 ✓
+            </div>
+            <div class="meta" style="margin-top: 20px;">
+                <strong>SUMMARY 02</strong><br/>初期配置：採用業務 / キャリア展開：CS＆AI自動化
+            </div>
+            <div class="meta" style="margin-top: 20px;">
+                <strong>SUMMARY 03</strong><br/>重要課題：タスク配分の継続性
+            </div>
+
+            <div class="meta" style="margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">
+                採用区分: 新卒社員 / ステータス: オンボーディング卒業 / 配置方針: 段階的キャリア展開
+            </div>
+        </div>
+
+        <!-- PROFILE -->
+        <div id="profile" class="section">
+            <div class="page-header">PAGE 01 · PROFILE</div>
+            <h2>基本プロフィール</h2>
+            
+            <p>ライター経験を活かしながら、採用業務・CS業務・AI領域で成長できるポテンシャルを持つ新卒人材。</p>
+
+            <h3>田中 なお</h3>
+            <p><strong>タナカ ナオ</strong></p>
+            
+            <h4>経歴・バックグラウンド</h4>
+            <ul>
+                <li>ライター経験あり（記事執筆スキルを保有）</li>
+                <li>新規領域への学習意欲が高い</li>
+                <li>自分で調べて理解しながら業務を進められる自走能力</li>
+                <li>困った時の相談姿勢が適切で、チーム内の関係構築が良好</li>
+            </ul>
+
+            <h4>対応可能領域</h4>
+            <ul>
+                <li>採用業務（募集～内定フロー）</li>
+                <li>CS業務（オンライン秘書・助成金サポート）</li>
+                <li>メディア記事作成（ブログ・求人ページ・LINEコンテンツ）</li>
+                <li>AI自動化・エンジニア領域への学習展開</li>
+            </ul>
+
+            <h4>稼働条件</h4>
+            <ul>
+                <li>稼働時間：要相談（段階的配置に対応）</li>
+                <li>出社 / リモート：柔軟に対応可能</li>
+                <li>学習機会への前向きさ：高い</li>
+            </ul>
+        </div>
+
+        <!-- CAREER & SKILLS -->
+        <div id="career" class="section">
+            <div class="page-header">PAGE 02 · CAREER & SKILLS</div>
+            <h2>経歴・スキルセット</h2>
+
+            <p>ライター経験から採用業務へのキャリア展開。複数領域の学習余地が大きい人材。</p>
+
+            <h3>ライティング領域</h3>
+            <p>記事執筆経験を持ち、文章力と取材力がある。このスキルを求人メディア、オウンドメディア、メッセージング作成へ活かせる基盤がある。</p>
+
+            <h3>自走学習能力</h3>
+            <p>新しい業務領域でも、自分で調べて理解しながら進められる能力。指示理解度が高く、期待以上の成果を提出する傾向。</p>
+
+            <h3>チーム適応力</h3>
+            <p>メンバーとの関係構築が自然で、違和感なく組織に融和。相談しやすい雰囲気づくりに貢献できるタイプ。</p>
+
+            <h3>得意・慣れている領域</h3>
+            <ul>
+                <li>文章作成・ライティング</li>
+                <li>新規領域への学習</li>
+                <li>業務プロセスの理解と改善</li>
+                <li>チーム内コミュニケーション</li>
+            </ul>
+        </div>
+
+        <!-- STRENGTHS & VISION -->
+        <div id="strengths" class="section">
+            <div class="page-header">PAGE 03 · STRENGTHS & VISION</div>
+            <h2>強み・志（Will / Can / Must）</h2>
+
+            <p>実装力と学習志向を兼ね備え、複数領域での成長を目指すタイプ。</p>
+
+            <div class="strength">
+                <div class="strength-title">STRENGTH 01 · 実装力</div>
+                <p>自分で調べて理解しながら業務遂行できる。指示への理解度が高く、期待以上の成果を返す傾向。</p>
+            </div>
+
+            <div class="strength">
+                <div class="strength-title">STRENGTH 02 · 学習志向</div>
+                <p>新領域への前向きな姿勢。困った時の相談が適切で、成長機会への関心が高い。</p>
+            </div>
+
+            <div class="strength">
+                <div class="strength-title">STRENGTH 03 · チーム適応力</div>
+                <p>メンバーとの関係構築が良好。違和感なく組織に融和し、信頼を醸成しやすい。</p>
+            </div>
+
+            <div class="strength">
+                <div class="strength-title">STRENGTH 04 · 責任感・コミット</div>
+                <p>与えられたタスクへの責任感が高く、完了までの姿勢が真摯。中途半端にしない特性。</p>
+            </div>
+
+            <h3>WILL · 本人の希望・目指す方向</h3>
+            <ul>
+                <li>CS業務への関心と実行経験</li>
+                <li>上司付き業務やAI自動化など、エンジニア領域への興味</li>
+                <li>ライター経験を活かした記事作成・メディア業務</li>
+            </ul>
+
+            <h3>CAN · 本人の強み・得意分野</h3>
+            <ul>
+                <li>実装力：自分で調べて理解しながら業務を進められる能力</li>
+                <li>学習志向：新領域への前向きな姿勢と継続的な成長意欲</li>
+                <li>コミュニケーション能力：チーム内での良好な関係構築</li>
+            </ul>
+
+            <h3>MUST · 組織が本人に期待すること</h3>
+            <ul>
+                <li>採用業務での即時戦力化と継続的なタスク配分</li>
+                <li>CS業務・AI領域との並行学習による段階的キャリア展開</li>
+                <li>定期的な進捗確認と目標設定による成長管理</li>
+            </ul>
+
+            <h3>立志 · STANDPOINT</h3>
+            <p style="font-style: italic; color: #666;"><strong>実装力を活かしながら、複数領域での専門性を確立し、組織の成長を支える人材になること</strong></p>
+        </div>
+
+        <!-- EVALUATION -->
+        <div id="evaluation" class="section">
+            <div class="page-header">PAGE 04 · EVALUATION FROM INTERVIEW</div>
+            <h2>面談から見えた評価ポイント（5項目）</h2>
+
+            <p>オンボーディング卒業面談を通じて、実績型新卒人材としての適性が確認されました。</p>
+
+            <h3>POINT 01 · 実装力の高さ</h3>
+            <p><strong>自分で調べて理解しながら業務遂行できる。指示への理解度が高く、期待以上の成果物を提出。</strong></p>
+
+            <h3>POINT 02 · 学習志向の強さ</h3>
+            <p><strong>新領域への前向きな姿勢。困った時の相談が適切で、継続的な成長意欲が顕著。</strong></p>
+
+            <h3>POINT 03 · チーム適応力</h3>
+            <p><strong>メンバーとの関係構築が良好。違和感なく組織に融和し、信頼を醸成しやすいタイプ。</strong></p>
+
+            <h3>POINT 04 · 責任感の高さ</h3>
+            <p><strong>与えられたタスクへの責任感が高く、完了までの姿勢が真摯。中途半端にしないタイプ。</strong></p>
+
+            <h3>POINT 05 · 複数領域への適応可能性</h3>
+            <p><strong>採用業務に未経験ながら適応。CS・AI領域への興味も示し、多方向でのキャリア展開が期待できる。</strong></p>
+
+            <p style="margin-top: 30px; padding: 20px; background-color: #f0f6ff; border-left: 4px solid #2E75B6; border-radius: 4px;">
+                <strong style="color: #1F497D;">一言でまとめると</strong><br/>
+                実装力・学習志向・チーム適応力を兼ね備えた、<br/>
+                <strong>「実績型の新卒人材」</strong>として、正式採用に相応しい判定が得られた。
+            </p>
+        </div>
+
+        <!-- APTITUDE -->
+        <div id="aptitude" class="section">
+            <div class="page-header">PAGE 05 · APTITUDE ANALYSIS</div>
+            <h2>適性分析（6項目）</h2>
+
+            <p>採用業務を主軸にしながら、CS・AI領域への段階的拡張に向く適性を持つ。</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">評価軸</th>
+                        <th style="width: 50%;">評価コメント</th>
+                        <th style="width: 20%; text-align: center;">評価</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>実装力</strong></td>
+                        <td>自分で調べて理解しながら業務遂行できる。指示への理解度が高い。</td>
+                        <td style="text-align: center;"><span class="rating">⭐⭐⭐⭐⭐</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>学習志向</strong></td>
+                        <td>新領域への前向きな姿勢。困った時の相談が適切。成長機会への関心が高い。</td>
+                        <td style="text-align: center;"><span class="rating">⭐⭐⭐⭐⭐</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>チーム適応力</strong></td>
+                        <td>メンバーとの関係構築が良好。違和感なく組織に融和している。</td>
+                        <td style="text-align: center;"><span class="rating">⭐⭐⭐⭐☆</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>責任感・コミット</strong></td>
+                        <td>与えられたタスクへの責任感が高い。完了までの姿勢が真摯。</td>
+                        <td style="text-align: center;"><span class="rating">⭐⭐⭐⭐⭐</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>複数領域適応</strong></td>
+                        <td>採用業務に未経験で適応。CS・AI領域への興味も示し、多方向での拡張が期待できる。</td>
+                        <td style="text-align: center;"><span class="rating">⭐⭐⭐⭐☆</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>成長可能性</strong></td>
+                        <td>長期的にはコア人材への育成が期待できる。継続的な学習機会の投資が有効。</td>
+                        <td style="text-align: center;"><span class="rating">⭐⭐⭐⭐⭐</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- HOPES & VALUES -->
+        <div id="hopes" class="section">
+            <div class="page-header">PAGE 06 · HOPES & VALUES</div>
+            <h2>田中さんの希望業務 ＆ 思考・価値観</h2>
+
+            <p>「採用業務で即戦力化しつつ、CS・AI領域にも段階的に展開したい」という明確な方向性を持っている。</p>
+
+            <h3>希望している業務（4項目）</h3>
+
+            <div style="margin: 20px 0;">
+                <h4>1 · 採用業務での即時戦力化</h4>
+                <p>募集要項・求人ページの企画・ライティングから、採用フロー整理、内定者フォローまで、ライター経験を活かしながら対応したい意向が明確。</p>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <h4>2 · CS業務への段階的展開</h4>
+                <p>オンライン秘書チームでのCS対応や助成金サポート業務への関心が高く、スキル習得の継続性を求めている。</p>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <h4>3 · エンジニア領域への成長機会</h4>
+                <p>AI自動化や上司付き業務への興味を示しており、中長期的な専門性確立への意欲がある。</p>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <h4>4 · メディア・ライティング業務</h4>
+                <p>ブログ記事・LINE公式・Instagram など、ライター経験を直接活かせる業務への期待。</p>
+            </div>
+
+            <h3>思考・価値観（4項目）</h3>
+
+            <div class="strength" style="margin: 10px 0; padding: 15px;">
+                <strong style="color: #1F497D;">🧠 実行志向</strong><br/>
+                <p style="margin: 5px 0; font-size: 14px;">「指示をもらったら、すぐに自分で調べて進める」という前向きな仕事スタイル。</p>
+            </div>
+
+            <div class="strength" style="margin: 10px 0; padding: 15px;">
+                <strong style="color: #1F497D;">📚 学習志向</strong><br/>
+                <p style="margin: 5px 0; font-size: 14px;">新領域への継続的な学習に前向き。わからないことは相談する誠実さがある。</p>
+            </div>
+
+            <div class="strength" style="margin: 10px 0; padding: 15px;">
+                <strong style="color: #1F497D;">🤝 チーム重視</strong><br/>
+                <p style="margin: 5px 0; font-size: 14px;">メンバーとの良好な関係構築を大切にしながら、業務を進める姿勢。</p>
+            </div>
+
+            <div class="strength" style="margin: 10px 0; padding: 15px;">
+                <strong style="color: #1F497D;">🎯 責任感</strong><br/>
+                <p style="margin: 5px 0; font-size: 14px;">与えられたタスクの完了まで、自分ごととして対応する真摯さ。</p>
+            </div>
+        </div>
+
+        <!-- ISSUE & SOLUTION -->
+        <div id="issue" class="section">
+            <div class="page-header">PAGE 07 · ORGANIZATIONAL ISSUE & SOLUTION</div>
+            <h2>運用上の課題と対策</h2>
+
+            <p>本人の成長機会と組織のニーズを両立させるために、以下の懸念点への対策が重要です。</p>
+
+            <div class="issue-red">
+                <h3 style="color: #E74C3C; font-size: 18px; margin-bottom: 10px;">🔴 懸念点：タスク不足による離脱リスク</h3>
+                
+                <h4 style="color: #1F497D; margin-top: 15px;">背景</h4>
+                <p>採用業務がスポットニーズの場合、通常時のタスク量が不足する可能性がある。本人は高い成長志向を持つため、タスク不足の状態が続くと、他社への転職や卒業打診対象になるリスクがある。</p>
+
+                <h4 style="color: #1F497D; margin-top: 15px;">対策</h4>
+                <ul>
+                    <li>段階的にCS業務・メディア業務を追加し、継続的なタスク配分を確保</li>
+                    <li>月次面談で進捗確認と目標設定を実施</li>
+                    <li>学習機会（AI・自動化スキル習得など）を明示し、キャリアパス予見性を高める</li>
+                    <li>コミットが曖昧な場合は定期的に上司と調整</li>
+                </ul>
+            </div>
+
+            <div class="issue-yellow">
+                <h3 style="color: #F39C12; font-size: 18px; margin-bottom: 10px;">🟡 懸念点：経験不足による品質リスク（初期フェーズ）</h3>
+                
+                <h4 style="color: #1F497D; margin-top: 15px;">背景</h4>
+                <p>採用業務が未経験のため、初期段階では品質チェック・フィードバックに時間がかかる可能性がある。</p>
+
+                <h4 style="color: #1F497D; margin-top: 15px;">対策</h4>
+                <ul>
+                    <li>採用業務の先輩（営業チーム等）を配置し、チェック・メンタリング体制を確立</li>
+                    <li>テンプレート・ガイドラインの整備で属人化を防止</li>
+                    <li>2～3週間ごとのレビュー会で学習スピードを加速</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- POSITION -->
+        <div id="position" class="section">
+            <div class="page-header">PAGE 08 · PROPOSED POSITION</div>
+            <h2>提案するポジション</h2>
+
+            <p>採用業務を主軸にしながら、CS・AI領域への段階的拡張を設計した配置プラン。</p>
+
+            <h3>採用業務 × オンライン秘書 × AI自動化ハイブリッド人材</h3>
+
+            <p>採用フロー整理から、CS補助業務、そしてAI領域への成長機会まで、段階的にキャリア展開できるポジション設計。</p>
+
+            <h3>配置の進め方（3フェーズ）</h3>
+
+            <div class="phase">
+                <div class="phase-title">PHASE 1 · 採用業務への専念（1～3ヶ月目）</div>
+                <p><strong>目標：</strong> 採用業務での即戦力化、業務フロー整理、成功パターンの確立</p>
+                <ul style="margin-top: 10px;">
+                    <li>募集要項・求人ページの企画・ライティング</li>
+                    <li>採用活動のワークフロー整備</li>
+                    <li>面接官との打ち合わせ・フォロー</li>
+                    <li>内定者フォローの仕組み構築</li>
+                </ul>
+            </div>
+
+            <div class="phase">
+                <div class="phase-title">PHASE 2 · CS業務への段階的展開（3～6ヶ月目）</div>
+                <p><strong>目標：</strong> CS業務への理解深化、クライアント接点経験、採用業務との並行運用</p>
+                <ul style="margin-top: 10px;">
+                    <li>非常勤チームでのCS補助業務（助成金サポート含む）</li>
+                    <li>クライアント対応の実践経験</li>
+                    <li>採用業務との両立による優先度管理</li>
+                </ul>
+            </div>
+
+            <div class="phase">
+                <div class="phase-title">PHASE 3 · AI自動化・エンジニア領域への展開（6ヶ月目以降）</div>
+                <p><strong>目標：</strong> 本人希望に基づくエンジニア領域への成長、上司付き業務やAI自動化への関与</p>
+                <ul style="margin-top: 10px;">
+                    <li>AI活用・自動化プロジェクトへの参加（ペアリング／メンタリング）</li>
+                    <li>上司付き業務を通じた技術習得</li>
+                    <li>メディア記事・AIノウハウ発信への関与強化</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- EXPECTED OUTCOME -->
+        <div id="outcome" class="section">
+            <div class="page-header">PAGE 09 · EXPECTED OUTCOME</div>
+            <h2>期待できる効果</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">項目</th>
+                        <th style="width: 75%;">具体的期待</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>採用業務</strong></td>
+                        <td>募集～内定までの業務が効率化。スピード感のある採用活動が実現。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CS品質向上</strong></td>
+                        <td>オンライン秘書チームのCS対応が手厚くなり、クライアント満足度が向上。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>メディア発信</strong></td>
+                        <td>ライター経験を活かし、ウツセバのブログ・記事コンテンツが充実。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>人材育成</strong></td>
+                        <td>段階的キャリア展開により、中長期的なコア人材への成長を期待。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>組織安定性</strong></td>
+                        <td>高い実装力・学習志向の人材確保により、組織の多機能性が向上。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AI領域拡張</strong></td>
+                        <td>エンジニア領域への展開により、組織のAI人材基盤を強化。</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 40px;">投資対効果</h3>
+            <p>新卒採用での投資（研修・メンタリング）は、長期的には組織の生産性向上と離職率低減に寄与する。タスク配分を適切に行うことで、本人のエンゲージメント維持と成長機会の両立が実現可能。</p>
+        </div>
+
+        <!-- CONDITIONS -->
+        <div id="conditions" class="section">
+            <div class="page-header">PAGE 10 · CONDITIONS</div>
+            <h2>配置条件</h2>
+
+            <h3>稼働条件</h3>
+            <ul>
+                <li><strong>勤務形態：</strong> 正社員（新卒）</li>
+                <li><strong>勤務地：</strong> 要相談（フルリモート / 出社 / ハイブリッド）</li>
+                <li><strong>初期配置：</strong> 採用業務を主軸に、CS・メディア業務を並行</li>
+            </ul>
+
+            <h3>サポート体制</h3>
+            <ul>
+                <li><strong>メンター配置：</strong> 採用業務の先輩メンバーを確定</li>
+                <li><strong>定期面談：</strong> 月1回の進捗確認・目標設定</li>
+                <li><strong>学習機会：</strong> AI・自動化領域への研修・ペアリング機会を提供</li>
+            </ul>
+
+            <h3>評価・昇進</h3>
+            <ul>
+                <li><strong>初期評価：</strong> 試用期間（通常通り）</li>
+                <li><strong>段階的昇進：</strong> フェーズごとの成果と適性判定に基づく</li>
+                <li><strong>給与：</strong> 新卒基準 / 成果に応じた調整も検討</li>
+            </ul>
+        </div>
+
+        <!-- CLOSING -->
+        <div id="closing" class="section">
+            <div class="page-header">PAGE 11 · APPROVAL REQUEST</div>
+
+            <div class="key-message">
+                <p>「正社員として正式採用」</p>
+                <p>段階的キャリア展開で、中長期的なコア人材への育成を推進</p>
+            </div>
+
+            <h2>承認をお願いしたい事項</h2>
+
+            <p><strong>田中 なおさんを</strong></p>
+            
+            <p style="font-size: 20px; font-weight: bold; color: #1F497D; margin: 20px 0;">
+                新卒社員として正式採用し、採用業務を主軸に、段階的にCS・AI領域への展開を推進すること
+            </p>
+
+            <p style="margin-top: 30px;">
+                <strong>配置方針：</strong><br/>
+                PHASE 1（1～3ヶ月）：採用業務専念<br/>
+                PHASE 2（3～6ヶ月）：CS業務展開<br/>
+                PHASE 3（6ヶ月以降）：AI自動化領域への成長機会
+            </p>
+
+            <h3 style="margin-top: 40px;">KEY MESSAGE</h3>
+
+            <div class="key-message" style="background-color: #fff3cd; margin-top: 20px;">
+                <p>田中なおは、</p>
+                <p>実装力・学習志向・チーム適応力を備えた</p>
+                <p style="font-size: 20px; font-weight: bold; color: #1F497D;">「実績型の新卒人材」である。</p>
+                <p style="margin-top: 20px; font-size: 14px;">正式採用後、段階的なキャリア展開により、</p>
+                <p style="font-size: 14px;">採用・CS・AI自動化領域での成長を支援することで、</p>
+                <p style="font-size: 14px; font-weight: bold;">組織の中期的な人材基盤強化に貢献する人材となることが期待される。</p>
+            </div>
+
+            <p style="margin-top: 50px; text-align: right; font-size: 12px; color: #999;">
+                Prepared based on onboarding interview · 2026.06.26
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>
